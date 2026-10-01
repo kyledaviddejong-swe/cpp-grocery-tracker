@@ -1,0 +1,6 @@
+/grocery-tracker
+/grocery-tracker.exe
+/frequency.dat
+*.o
+*.obj
+__pycache__/
