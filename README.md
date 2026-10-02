@@ -38,9 +38,9 @@ Each run creates or overwrites `frequency.dat` in the current directory. It cont
 
 The collection is a `std::map`, an ordered associative container. It provides sorted iteration and logarithmic lookup and insertion in the number of distinct items. It is not a hash table. The histogram prints one asterisk per occurrence, which suits a small input but can produce long lines for large counts.
 
-## Verification and cleanup
+## Verification
 
-The portfolio pass retains the original class and menu structure. It changes menu and lookup input to whole-line validation, handles closed input at both prompts, and checks file read and backup write/close failures. Inputs such as `4junk` are rejected before a menu action runs.
+The program validates complete lines of menu and lookup input, handles closed input at both prompts, and checks file read and backup write/close failures. Inputs such as `4junk` are rejected before a menu action runs.
 
 The C++17 build completed without warnings on October 1, 2026. Seven focused regression tests passed, covering lookup, sorted counts, histogram and backup contents, malformed input, closed input, a missing input file and backup failures.
 
@@ -52,8 +52,8 @@ python3 test_tracker.py ./grocery-tracker
 
 The backup-write failure check uses Linux's `/dev/full` device and is skipped where unavailable. These checks cover the main workflows and the cleanup changes, rather than every possible input or filesystem condition.
 
-## Background and contribution
+## Background
 
-This began as my SNHU CS-210 coursework for a fictional grocery business. I implemented the tracker around file input/output, class design, maps and the different ways of displaying the results. The supplied assignment input has been replaced with a small original example.
+I implemented the tracker around file input/output, class design, maps, and multiple ways of displaying the counts.
 
-My original reflection acknowledged ChatGPT assistance with input-buffer handling, which I reviewed before using. AI assistance was also used for this portfolio review, focused fixes, regression checks and documentation. The original school repository remains separate from this edition.
+Developed as undergraduate coursework. See [credits and acknowledgments](CREDITS.md).
